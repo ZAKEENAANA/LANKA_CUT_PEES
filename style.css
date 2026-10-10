@@ -1,6 +1,6 @@
 /* =========================================
    LANKA CUT PIECES
-   MAIN STYLESHEET
+   MAIN STYLESHEET (corrected)
 ========================================= */
 
 * {
@@ -149,6 +149,7 @@ select {
             rgba(20, 10, 15, 0.78),
             rgba(20, 10, 15, 0.25)
         ),
+        /* FIXED: hero.jpg is in the same folder as style.css */
         url("hero.jpg") center / cover no-repeat;
 }
 
@@ -493,6 +494,7 @@ select {
     height: 600px;
     overflow: hidden;
     border-radius: 8px;
+    background: #eee;
 }
 
 .about-image img {
@@ -553,7 +555,7 @@ select {
     display: grid;
     place-items: center;
     margin: 0 auto 18px;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     font-weight: 700;
 }
@@ -582,6 +584,7 @@ select {
     height: 280px;
     object-fit: cover;
     border-radius: 5px;
+    background: #eee;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -639,7 +642,7 @@ select {
     background: white;
     padding: 35px;
     border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
 }
 
 .contact-form-wrapper h3 {
@@ -721,7 +724,7 @@ select {
 
 .footer-bottom {
     padding: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
     color: #999;
     font-size: 13px;
@@ -736,7 +739,7 @@ select {
     position: fixed;
     inset: 0;
     z-index: 2000;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     display: none;
     align-items: center;
     justify-content: center;
