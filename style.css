@@ -149,7 +149,7 @@ select {
             rgba(20, 10, 15, 0.78),
             rgba(20, 10, 15, 0.25)
         ),
-        url("../images/hero.jpg") center / cover no-repeat;
+        url("hero.jpg") center / cover no-repeat;
 }
 
 .hero-content {
