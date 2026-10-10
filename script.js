@@ -11,7 +11,7 @@
 // Replace with the real shop WhatsApp number.
 // Sri Lankan format: 94771234567
 // Do not use +, spaces, or hyphens.
-const whatsappNumber = "947XXXXXXXX";
+const whatsappNumber = "94759241310";
 
 
 /* =========================================================
