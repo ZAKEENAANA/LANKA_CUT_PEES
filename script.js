@@ -1,757 +1,654 @@
-/* =========================================================
+* ===/======================================================
    LANKA CUT PIECES
-   Complete script.js
+   Complete and corrected script.js
    ========================================================= */
 
 
 /* =========================================================
-   1. WHATSAPP NUMBER
-   =========================================================
-   
-   IMPORTANT:
-   Replace this with the shop's real WhatsApp number.
+   1. WHATSAPP CONFIGURATION
+   ========================================================= */
 
-   Example:
-   Sri Lankan number: 0771234567
-   WhatsApp format:   94771234567
-
-   Do NOT put +, spaces or hyphens.
-========================================================= */
-
+// Replace with the real shop WhatsApp number.
+// Sri Lankan format: 94771234567
+// Do not use +, spaces, or hyphens.
 const whatsappNumber = "947XXXXXXXX";
 
 
 /* =========================================================
    2. PRODUCT DATA
+   IMPORTANT:
+   Images are assumed to be in the same folder as
+   index.html, style.css and script.js.
+   Check filenames against your GitHub repository.
    ========================================================= */
 
 const products = [
-
-    /* =========================
-       PLAIN FABRICS
-    ========================= */
-
+    // PLAIN FABRICS
     {
+        id: 1,
         name: "Premium Plain Cotton",
         category: "plain",
         price: "LKR 450+",
-        description: "Soft and comfortable plain cotton fabric. Available in multiple colours.",
-        image: "images/plain-01.jpg"
+        description: "Soft and comfortable plain cotton fabric available in multiple colours.",
+        image: "./plain-01.jpg"
     },
-
     {
+        id: 2,
         name: "Soft Plain Fabric",
         category: "plain",
         price: "LKR 500+",
-        description: "Soft and comfortable plain fabric suitable for dresses and sewing projects.",
-        image: "images/plain-02.jpg"
+        description: "Soft fabric suitable for dresses and sewing projects.",
+        image: "./plain-02.jpg"
     },
-
     {
+        id: 3,
         name: "Premium Linen",
         category: "plain",
         price: "LKR 650+",
         description: "Elegant linen fabric with a beautiful natural finish.",
-        image: "images/plain-03.jpg"
+        image: "./plain-03.jpg"
     },
-
     {
+        id: 4,
         name: "Classic Plain Fabric",
         category: "plain",
         price: "LKR 480+",
-        description: "Classic plain fabric suitable for everyday clothing and creative designs.",
-        image: "images/plain-04.jpg"
+        description: "Classic plain fabric for everyday clothing and creative designs.",
+        image: "./plain-04.jpg"
     },
-
     {
+        id: 5,
         name: "Soft Colour Cotton",
         category: "plain",
         price: "LKR 520+",
         description: "Comfortable cotton fabric available in attractive colours.",
-        image: "images/plain-05.jpg"
+        image: "./plain-05.jpg"
     },
-
     {
+        id: 6,
         name: "Premium Plain Collection",
         category: "plain",
         price: "LKR 600+",
-        description: "Premium plain fabric collection for stylish clothing and sewing.",
-        image: "images/plain-06.jpg"
+        description: "Premium plain fabric for stylish clothing and sewing.",
+        image: "./plain-06.jpg"
     },
 
-
-    /* =========================
-       PRINTED FABRICS
-    ========================= */
-
+    // PRINTED FABRICS
     {
+        id: 7,
         name: "Floral Printed Fabric",
         category: "printed",
         price: "LKR 550+",
-        description: "Beautiful floral printed fabric suitable for dresses and fashion designs.",
-        image: "images/printed-01.jpg"
+        description: "Beautiful floral fabric for dresses and fashion designs.",
+        image: "./printed-01.jpg"
     },
-
     {
+        id: 8,
         name: "Modern Printed Fabric",
         category: "printed",
         price: "LKR 600+",
-        description: "Modern printed fabric suitable for stylish outfits and creative designs.",
-        image: "images/printed-02.jpg"
+        description: "Modern printed fabric for stylish outfits and creative designs.",
+        image: "./printed-02.jpg"
     },
-
     {
-        name: "Traditional Printed",
+        id: 9,
+        name: "Traditional Printed Fabric",
         category: "printed",
         price: "LKR 500+",
-        description: "Attractive traditional patterned fabric suitable for various clothing designs.",
-        image: "images/printed-03.jpg"
+        description: "Attractive traditional patterns for different clothing designs.",
+        image: "./printed-03.jpg"
     },
-
     {
+        id: 10,
         name: "Elegant Floral Print",
         category: "printed",
         price: "LKR 580+",
-        description: "Elegant floral print fabric for dresses, skirts and fashion projects.",
-        image: "images/printed-04.jpg"
+        description: "Elegant floral fabric for dresses, skirts and sewing projects.",
+        image: "./printed-04.jpg"
     },
-
     {
+        id: 11,
         name: "Colourful Fashion Print",
         category: "printed",
         price: "LKR 620+",
-        description: "Colourful printed fabric designed for fashionable and creative outfits.",
-        image: "images/printed-05.jpg"
+        description: "Colourful printed fabric for fashionable and creative outfits.",
+        image: "./printed-05.jpg"
     },
-
     {
+        id: 12,
         name: "Modern Print Collection",
         category: "printed",
         price: "LKR 600+",
-        description: "Modern printed fabrics suitable for stylish everyday outfits.",
-        image: "images/printed-06.jpg"
+        description: "Modern printed fabrics for stylish everyday outfits.",
+        image: "./printed-06.jpg"
     },
 
-
-    /* =========================
-       CUT PIECES
-    ========================= */
-
+    // CUT PIECES
     {
+        id: 13,
         name: "Fashion Cut Piece",
         category: "cutpiece",
         price: "LKR 250+",
-        description: "Selected fabric cut pieces available in different designs and colours.",
-        image: "images/cutpiece-01.jpg"
+        description: "Selected fabric cut pieces in different designs and colours.",
+        image: "./cutpiece-01.jpg"
     },
-
     {
+        id: 14,
         name: "Colour Cut Pieces",
         category: "cutpiece",
         price: "LKR 300+",
-        description: "Beautiful colour fabric pieces suitable for small sewing projects.",
-        image: "images/cutpiece-02.jpg"
+        description: "Colourful fabric pieces suitable for small sewing projects.",
+        image: "./cutpiece-02.jpg"
     },
-
     {
+        id: 15,
         name: "Printed Cut Pieces",
         category: "cutpiece",
         price: "LKR 350+",
-        description: "Printed fabric cut pieces for creative fashion and sewing projects.",
-        image: "images/cutpiece-03.jpg"
+        description: "Printed fabric pieces for creative fashion and sewing projects.",
+        image: "./cutpiece-03.jpg"
     },
-
     {
+        id: 16,
         name: "Kids Fashion Cut Pieces",
         category: "cutpiece",
         price: "LKR 250+",
-        description: "Selected fabric pieces suitable for children's clothing and creative projects.",
-        image: "images/cutpiece-04.jpg"
+        description: "Selected fabric pieces suitable for children's clothing.",
+        image: "./cutpiece-04.jpg"
     },
-
     {
+        id: 17,
         name: "Designer Cut Pieces",
         category: "cutpiece",
         price: "LKR 400+",
         description: "Designer fabric cut pieces with attractive patterns and colours.",
-        image: "images/cutpiece-05.jpg"
+        image: "./cutpiece-05.jpg"
     },
-
     {
+        id: 18,
         name: "Mixed Cut Piece Collection",
         category: "cutpiece",
         price: "LKR 300+",
-        description: "A collection of selected cut pieces for different sewing and craft projects.",
-        image: "images/cutpiece-06.jpg"
+        description: "A collection of fabric cut pieces for sewing and craft projects.",
+        image: "./cutpiece-06.jpg"
     }
-
 ];
 
 
 /* =========================================================
-   3. GET HTML ELEMENTS
+   3. INITIALISE WEBSITE
    ========================================================= */
 
-const productsGrid = document.getElementById("productsGrid");
-const searchInput = document.getElementById("searchInput");
-const filterButtons = document.querySelectorAll(".filter-btn");
-const noResults = document.getElementById("noResults");
+document.addEventListener("DOMContentLoaded", function () {
+
+    const productsGrid = document.getElementById("productsGrid");
+    const searchInput = document.getElementById("searchInput");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const noResults = document.getElementById("noResults");
+
+    const productModal = document.getElementById("productModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalPrice = document.getElementById("modalPrice");
+    const modalWhatsApp = document.getElementById("modalWhatsApp");
+
+    let currentCategory = "all";
 
 
-/* =========================================================
-   4. CURRENT FILTER
-   ========================================================= */
+    /* =====================================================
+       4. CATEGORY NAME
+       ===================================================== */
 
-let currentCategory = "all";
+    function getCategoryName(category) {
+        const categoryNames = {
+            plain: "Plain Fabric",
+            printed: "Printed Fabric",
+            cutpiece: "Cut Pieces"
+        };
 
-
-/* =========================================================
-   5. DISPLAY PRODUCTS
-   ========================================================= */
-
-function displayProducts(productList) {
-
-    if (!productsGrid) {
-        return;
+        return categoryNames[category] || "Fabric";
     }
 
-    productsGrid.innerHTML = "";
 
-    if (productList.length === 0) {
+    /* =====================================================
+       5. DISPLAY PRODUCTS
+       ===================================================== */
+
+    function displayProducts(productList) {
+
+        if (!productsGrid) {
+            console.error(
+                'Products container not found. Add id="productsGrid" to index.html.'
+            );
+            return;
+        }
+
+        productsGrid.innerHTML = "";
+
+        if (productList.length === 0) {
+            if (noResults) {
+                noResults.style.display = "block";
+            }
+            return;
+        }
 
         if (noResults) {
-            noResults.style.display = "block";
+            noResults.style.display = "none";
         }
 
-        return;
-    }
+        productList.forEach(function (product) {
 
-    if (noResults) {
-        noResults.style.display = "none";
-    }
+            const article = document.createElement("article");
+            article.className = "product-card";
+            article.dataset.category = product.category;
+            article.dataset.name = product.name;
 
-
-    productList.forEach((product, index) => {
-
-        const article = document.createElement("article");
-
-        article.className = "product-card";
-
-        article.setAttribute("data-category", product.category);
-
-        article.setAttribute("data-name", product.name);
-
-
-        /* Category label */
-
-        let categoryLabel = "";
-
-        if (product.category === "plain") {
-            categoryLabel = "Plain";
-        }
-
-        else if (product.category === "printed") {
-            categoryLabel = "Printed";
-        }
-
-        else if (product.category === "cutpiece") {
-            categoryLabel = "Cut Piece";
-        }
-
-
-        /* Product card */
-
-        article.innerHTML = `
-
-            <div class="product-image">
-
-                <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                    loading="lazy"
-                >
-
-                <span class="product-badge">
-                    ${categoryLabel}
-                </span>
-
-            </div>
-
-
-            <div class="product-info">
-
-                <h3>
-                    ${product.name}
-                </h3>
-
-                <p>
-                    ${product.description}
-                </p>
-
-
-                <div class="product-bottom">
-
-                    <strong>
-                        ${product.price}
-                    </strong>
-
-                    <button
-                        class="view-btn"
-                        type="button"
-                        onclick="openProduct(${index})"
+            article.innerHTML = `
+                <div class="product-image">
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        loading="lazy"
                     >
-                        View
-                    </button>
 
+                    <span class="product-badge">
+                        ${getCategoryName(product.category)}
+                    </span>
                 </div>
 
-            </div>
+                <div class="product-info">
+                    <h3>${product.name}</h3>
 
-        `;
+                    <p>${product.description}</p>
 
+                    <div class="product-bottom">
+                        <strong>${product.price}</strong>
 
-        productsGrid.appendChild(article);
+                        <button
+                            class="view-btn"
+                            type="button"
+                            data-product-id="${product.id}"
+                        >
+                            View
+                        </button>
+                    </div>
+                </div>
+            `;
 
-    });
+            // Show a fallback if the image cannot load.
+            const image = article.querySelector("img");
 
-}
+            image.addEventListener("error", function () {
+                console.error("Image not found:", product.image);
+                image.alt = product.name + " image unavailable";
+                image.classList.add("image-error");
+            });
 
-
-/* =========================================================
-   6. FILTER + SEARCH PRODUCTS
-   ========================================================= */
-
-function filterProducts() {
-
-    const searchTerm = searchInput
-        ? searchInput.value.toLowerCase().trim()
-        : "";
-
-
-    const filteredProducts = products.filter(product => {
-
-        /* Category check */
-
-        const categoryMatch =
-            currentCategory === "all" ||
-            product.category === currentCategory;
-
-
-        /* Search check */
-
-        const searchMatch =
-            product.name.toLowerCase().includes(searchTerm) ||
-            product.description.toLowerCase().includes(searchTerm) ||
-            product.category.toLowerCase().includes(searchTerm);
+            productsGrid.appendChild(article);
+        });
+    }
 
 
-        return categoryMatch && searchMatch;
+    /* =====================================================
+       6. SEARCH AND FILTER
+       ===================================================== */
 
-    });
+    function filterProducts() {
 
+        const searchTerm = searchInput
+            ? searchInput.value.toLowerCase().trim()
+            : "";
 
-    displayProducts(filteredProducts);
+        const filteredProducts = products.filter(function (product) {
 
-}
+            const categoryMatch =
+                currentCategory === "all" ||
+                product.category === currentCategory;
 
+            const searchableText = (
+                product.name + " " +
+                product.description + " " +
+                product.category
+            ).toLowerCase();
 
-/* =========================================================
-   7. CATEGORY FILTER BUTTONS
-   ========================================================= */
+            const searchMatch = searchableText.includes(searchTerm);
 
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        /* Remove active from all buttons */
-
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
+            return categoryMatch && searchMatch;
         });
 
-
-        /* Add active to clicked button */
-
-        button.classList.add("active");
+        displayProducts(filteredProducts);
+    }
 
 
-        /* Get selected category */
+    /* =====================================================
+       7. CATEGORY BUTTONS
+       ===================================================== */
 
-        currentCategory =
-            button.getAttribute("data-category");
+    filterButtons.forEach(function (button) {
 
+        button.addEventListener("click", function () {
 
-        /* Display filtered products */
+            filterButtons.forEach(function (item) {
+                item.classList.remove("active");
+            });
 
-        filterProducts();
+            button.classList.add("active");
 
+            currentCategory =
+                button.dataset.category || "all";
+
+            filterProducts();
+        });
     });
 
-});
 
+    /* =====================================================
+       8. SEARCH INPUT
+       ===================================================== */
 
-/* =========================================================
-   8. SEARCH
-   ========================================================= */
-
-if (searchInput) {
-
-    searchInput.addEventListener("input", () => {
-
-        filterProducts();
-
-    });
-
-}
-
-
-/* =========================================================
-   9. PRODUCT MODAL
-   ========================================================= */
-
-function openProduct(productIndex) {
-
-    const product = products[productIndex];
-
-    if (!product) {
-        return;
+    if (searchInput) {
+        searchInput.addEventListener("input", filterProducts);
     }
 
 
-    const modal = document.getElementById("productModal");
+    /* =====================================================
+       9. OPEN PRODUCT MODAL
+       ===================================================== */
 
-    const modalImage = document.getElementById("modalImage");
+    function openProduct(productId) {
 
-    const modalTitle = document.getElementById("modalTitle");
+        const product = products.find(function (item) {
+            return item.id === Number(productId);
+        });
 
-    const modalDescription =
-        document.getElementById("modalDescription");
-
-    const modalPrice =
-        document.getElementById("modalPrice");
-
-    const modalWhatsApp =
-        document.getElementById("modalWhatsApp");
-
-
-    if (!modal) {
-        return;
-    }
-
-
-    /* Product information */
-
-    modalImage.src = product.image;
-
-    modalImage.alt = product.name;
-
-    modalTitle.textContent = product.name;
-
-    modalDescription.textContent =
-        product.description;
-
-    modalPrice.textContent =
-        product.price;
-
-
-    /* WhatsApp message */
-
-    const whatsappMessage =
-        `Hello Lanka Cut Pieces,
-
-I am interested in:
-
-Fabric: ${product.name}
-Category: ${getCategoryName(product.category)}
-Price: ${product.price}
-
-Please let me know about the available colours, designs and quantity.`;
-
-
-    modalWhatsApp.href =
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-
-    /* Show modal */
-
-    modal.classList.add("active");
-
-    document.body.classList.add("modal-open");
-
-}
-
-
-/* =========================================================
-   10. CATEGORY NAME
-   ========================================================= */
-
-function getCategoryName(category) {
-
-    if (category === "plain") {
-        return "Plain Fabric";
-    }
-
-    if (category === "printed") {
-        return "Printed Fabric";
-    }
-
-    if (category === "cutpiece") {
-        return "Cut Pieces";
-    }
-
-    return "Fabric";
-
-}
-
-
-/* =========================================================
-   11. CLOSE PRODUCT MODAL
-   ========================================================= */
-
-function closeProduct() {
-
-    const modal =
-        document.getElementById("productModal");
-
-
-    if (!modal) {
-        return;
-    }
-
-
-    modal.classList.remove("active");
-
-    document.body.classList.remove("modal-open");
-
-}
-
-
-/* =========================================================
-   12. CLOSE MODAL WHEN CLICKING OUTSIDE
-   ========================================================= */
-
-const productModal =
-    document.getElementById("productModal");
-
-
-if (productModal) {
-
-    productModal.addEventListener("click", (event) => {
-
-        if (event.target === productModal) {
-
-            closeProduct();
-
+        if (!product) {
+            console.error("Product not found:", productId);
+            return;
         }
 
-    });
+        if (!productModal) {
+            console.error(
+                'Product modal not found. Check id="productModal" in index.html.'
+            );
+            return;
+        }
 
-}
+        if (modalImage) {
+            modalImage.src = product.image;
+            modalImage.alt = product.name;
+        }
 
+        if (modalTitle) {
+            modalTitle.textContent = product.name;
+        }
 
-/* =========================================================
-   13. CLOSE MODAL WITH ESC KEY
-   ========================================================= */
+        if (modalDescription) {
+            modalDescription.textContent = product.description;
+        }
 
-document.addEventListener("keydown", (event) => {
+        if (modalPrice) {
+            modalPrice.textContent = product.price;
+        }
 
-    if (event.key === "Escape") {
+        if (modalWhatsApp) {
 
-        closeProduct();
+            const message =
+                "Hello Lanka Cut Pieces!\n\n" +
+                "I am interested in this fabric.\n\n" +
+                "Fabric: " + product.name + "\n" +
+                "Category: " + getCategoryName(product.category) + "\n" +
+                "Price: " + product.price + "\n\n" +
+                "Please let me know about available colours, designs and quantities.";
 
+            modalWhatsApp.href = createWhatsAppURL(message);
+        }
+
+        productModal.classList.add("active");
+        document.body.classList.add("modal-open");
     }
 
-});
 
+    /* =====================================================
+       10. VIEW BUTTONS
+       ===================================================== */
 
-/* =========================================================
-   14. MOBILE MENU
-   ========================================================= */
+    if (productsGrid) {
 
-const menuButton =
-    document.getElementById("menuButton");
+        productsGrid.addEventListener("click", function (event) {
 
-const nav =
-    document.getElementById("nav");
+            const viewButton = event.target.closest(".view-btn");
 
+            if (!viewButton) {
+                return;
+            }
 
-if (menuButton && nav) {
-
-    menuButton.addEventListener("click", () => {
-
-        nav.classList.toggle("active");
-
-    });
-
-
-    /* Close menu when clicking a navigation link */
-
-    const navLinks =
-        nav.querySelectorAll(".nav-link");
-
-
-    navLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            nav.classList.remove("active");
-
+            openProduct(viewButton.dataset.productId);
         });
+    }
 
+
+    /* =====================================================
+       11. CLOSE MODAL
+       ===================================================== */
+
+    function closeProduct() {
+
+        if (productModal) {
+            productModal.classList.remove("active");
+        }
+
+        document.body.classList.remove("modal-open");
+    }
+
+    // Make these functions available to inline HTML handlers.
+    window.openProduct = openProduct;
+    window.closeProduct = closeProduct;
+
+    const closeButtons = document.querySelectorAll(
+        ".close-modal, .modal-close, [data-close-modal]"
+    );
+
+    closeButtons.forEach(function (button) {
+        button.addEventListener("click", closeProduct);
     });
 
-}
-
-
-/* =========================================================
-   15. ACTIVE NAVIGATION LINK
-   ========================================================= */
-
-const navLinks =
-    document.querySelectorAll(".nav-link");
-
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navLinks.forEach(item => {
-            item.classList.remove("active");
+    if (productModal) {
+        productModal.addEventListener("click", function (event) {
+            if (event.target === productModal) {
+                closeProduct();
+            }
         });
+    }
 
-        link.classList.add("active");
-
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeProduct();
+        }
     });
 
-});
 
+    /* =====================================================
+       12. WHATSAPP URL
+       ===================================================== */
 
-/* =========================================================
-   16. CONTACT FORM → WHATSAPP
-   ========================================================= */
+    function createWhatsAppURL(message) {
 
-const contactForm =
-    document.getElementById("contactForm");
+        if (!/^94\d{9}$/.test(whatsappNumber)) {
+            alert(
+                "Please configure the shop's real WhatsApp number in script.js."
+            );
+            return "#";
+        }
 
-
-if (contactForm) {
-
-    contactForm.addEventListener("submit", (event) => {
-
-        event.preventDefault();
-
-
-        /* Get form values */
-
-        const name =
-            document.getElementById("name").value.trim();
-
-        const phone =
-            document.getElementById("phone").value.trim();
-
-        const fabricType =
-            document.getElementById("fabricType").value;
-
-        const message =
-            document.getElementById("message").value.trim();
-
-
-        /* Create WhatsApp message */
-
-        const whatsappMessage =
-            `Hello Lanka Cut Pieces,
-
-I would like to make an inquiry.
-
-Name: ${name}
-Phone: ${phone}
-Fabric Type: ${fabricType}
-
-Message:
-${message}`;
-
-
-        /* Open WhatsApp */
-
-        const whatsappURL =
-            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-
-        window.open(
-            whatsappURL,
-            "_blank"
+        return (
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message)
         );
-
-    });
-
-}
-
-
-/* =========================================================
-   17. GENERAL WHATSAPP BUTTONS
-   ========================================================= */
-
-const whatsappButtons =
-    document.querySelectorAll(".btn-whatsapp");
-
-
-whatsappButtons.forEach(button => {
-
-    /* Skip modal WhatsApp button because its
-       URL is generated dynamically */
-
-    if (button.id === "modalWhatsApp") {
-        return;
     }
 
 
-    button.addEventListener("click", () => {
+    /* =====================================================
+       13. GENERAL WHATSAPP BUTTONS
+       ===================================================== */
+
+    const whatsappButtons = document.querySelectorAll(".btn-whatsapp");
+
+    whatsappButtons.forEach(function (button) {
+
+        if (button.id === "modalWhatsApp") {
+            return;
+        }
 
         const message =
-            "Hello Lanka Cut Pieces, I would like to inquire about your fabrics.";
+            "Hello Lanka Cut Pieces! I would like to inquire about your fabrics.";
 
+        const url = createWhatsAppURL(message);
 
-        button.href =
-            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        if (button.tagName === "A") {
+            button.href = url;
+            button.target = "_blank";
+            button.rel = "noopener noreferrer";
+        } else {
+            button.addEventListener("click", function () {
+                const whatsappURL = createWhatsAppURL(message);
 
+                if (whatsappURL !== "#") {
+                    window.open(
+                        whatsappURL,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
+                }
+            });
+        }
     });
 
-});
 
+    /* =====================================================
+       14. CONTACT FORM TO WHATSAPP
+       ===================================================== */
 
-/* =========================================================
-   18. CURRENT YEAR
-   ========================================================= */
+    const contactForm = document.getElementById("contactForm");
 
-const yearElement =
-    document.getElementById("year");
+    if (contactForm) {
 
+        contactForm.addEventListener("submit", function (event) {
 
-if (yearElement) {
+            event.preventDefault();
 
-    yearElement.textContent =
-        new Date().getFullYear();
+            const nameField = document.getElementById("name");
+            const phoneField = document.getElementById("phone");
+            const fabricTypeField = document.getElementById("fabricType");
+            const messageField = document.getElementById("message");
 
-}
+            const name = nameField ? nameField.value.trim() : "";
+            const phone = phoneField ? phoneField.value.trim() : "";
+            const fabricType = fabricTypeField
+                ? fabricTypeField.value
+                : "Not specified";
+            const message = messageField
+                ? messageField.value.trim()
+                : "";
 
+            if (!name) {
+                alert("Please enter your name.");
+                if (nameField) nameField.focus();
+                return;
+            }
 
-/* =========================================================
-   19. DISPLAY ALL PRODUCTS WHEN PAGE LOADS
-   ========================================================= */
+            const whatsappMessage =
+                "Hello Lanka Cut Pieces!\n\n" +
+                "I would like to make an inquiry.\n\n" +
+                "Name: " + name + "\n" +
+                "Phone: " + phone + "\n" +
+                "Fabric Type: " + fabricType + "\n\n" +
+                "Message:\n" + message;
 
-displayProducts(products);
+            const whatsappURL = createWhatsAppURL(whatsappMessage);
 
-
-/* =========================================================
-   20. IMAGE ERROR HANDLING
-   ========================================================= */
-
-document.addEventListener("error", (event) => {
-
-    if (event.target.tagName === "IMG") {
-
-        event.target.classList.add("image-error");
-
+            if (whatsappURL !== "#") {
+                window.open(
+                    whatsappURL,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+            }
+        });
     }
 
-}, true);
+
+    /* =====================================================
+       15. MOBILE NAVIGATION
+       ===================================================== */
+
+    const menuButton = document.getElementById("menuButton");
+    const nav = document.getElementById("nav");
+
+    if (menuButton && nav) {
+
+        menuButton.addEventListener("click", function () {
+
+            const isActive = nav.classList.toggle("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isActive)
+            );
+        });
+
+        nav.querySelectorAll(".nav-link").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                nav.classList.remove("active");
+                menuButton.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
+
+    /* =====================================================
+       16. ACTIVE NAVIGATION LINKS
+       ===================================================== */
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            link.classList.add("active");
+        });
+    });
+
+
+    /* =====================================================
+       17. CURRENT YEAR
+       ===================================================== */
+
+    const yearElement = document.getElementById("year");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+
+    /* =====================================================
+       18. DISPLAY PRODUCTS ON PAGE LOAD
+       ===================================================== */
+
+    displayProducts(products);
+
+    console.log(
+        "Lanka Cut Pieces loaded successfully. Products:",
+        products.length
+    );
+
+});
