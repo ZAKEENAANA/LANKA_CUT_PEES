@@ -474,7 +474,7 @@ Please let me know about the available colours, designs and quantity.`;
 
     /* Show modal */
 
-    modal.classList.add("show");
+    modal.classList.add("active");
 
     document.body.classList.add("modal-open");
 
@@ -519,7 +519,7 @@ function closeProduct() {
     }
 
 
-    modal.classList.remove("show");
+    modal.classList.remove("active");
 
     document.body.classList.remove("modal-open");
 
@@ -579,7 +579,7 @@ if (menuButton && nav) {
 
     menuButton.addEventListener("click", () => {
 
-        nav.classList.toggle("open");
+        nav.classList.toggle("active");
 
     });
 
@@ -594,7 +594,7 @@ if (menuButton && nav) {
 
         link.addEventListener("click", () => {
 
-            nav.classList.remove("open");
+            nav.classList.remove("active");
 
         });
 
