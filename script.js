@@ -89,7 +89,7 @@ const products = [
         category: "printed",
         price: "LKR 550+",
         description: "Beautiful floral printed fabric suitable for dresses and fashion designs.",
-        image: "images/printed-01.jpg"
+        image: "printed-01.jpg"
     },
 
     {
@@ -97,7 +97,7 @@ const products = [
         category: "printed",
         price: "LKR 600+",
         description: "Modern printed fabric suitable for stylish outfits and creative designs.",
-        image: "images/printed-02.jpg"
+        image: "printed-02.jpg"
     },
 
     {
@@ -105,7 +105,7 @@ const products = [
         category: "printed",
         price: "LKR 500+",
         description: "Attractive traditional patterned fabric suitable for various clothing designs.",
-        image: "images/printed-03.jpg"
+        image: "printed-03.jpg"
     },
 
     {
@@ -113,7 +113,7 @@ const products = [
         category: "printed",
         price: "LKR 580+",
         description: "Elegant floral print fabric for dresses, skirts and fashion projects.",
-        image: "images/printed-04.jpg"
+        image: "printed-04.jpg"
     },
 
     {
@@ -121,7 +121,7 @@ const products = [
         category: "printed",
         price: "LKR 620+",
         description: "Colourful printed fabric designed for fashionable and creative outfits.",
-        image: "images/printed-05.jpg"
+        image: "printed-05.jpg"
     },
 
     {
@@ -129,7 +129,7 @@ const products = [
         category: "printed",
         price: "LKR 600+",
         description: "Modern printed fabrics suitable for stylish everyday outfits.",
-        image: "images/printed-06.jpg"
+        image: "printed-06.jpg"
     },
 
 
@@ -142,7 +142,7 @@ const products = [
         category: "cutpiece",
         price: "LKR 250+",
         description: "Selected fabric cut pieces available in different designs and colours.",
-        image: "images/cutpiece-01.jpg"
+        image: "cutpiece-01.jpg"
     },
 
     {
@@ -150,7 +150,7 @@ const products = [
         category: "cutpiece",
         price: "LKR 300+",
         description: "Beautiful colour fabric pieces suitable for small sewing projects.",
-        image: "images/cutpiece-02.jpg"
+        image: "cutpiece-02.jpg"
     },
 
     {
@@ -158,7 +158,7 @@ const products = [
         category: "cutpiece",
         price: "LKR 350+",
         description: "Printed fabric cut pieces for creative fashion and sewing projects.",
-        image: "images/cutpiece-03.jpg"
+        image: "cutpiece-03.jpg"
     },
 
     {
@@ -166,7 +166,7 @@ const products = [
         category: "cutpiece",
         price: "LKR 250+",
         description: "Selected fabric pieces suitable for children's clothing and creative projects.",
-        image: "images/cutpiece-04.jpg"
+        image: "cutpiece-04.jpg"
     },
 
     {
@@ -174,7 +174,7 @@ const products = [
         category: "cutpiece",
         price: "LKR 400+",
         description: "Designer fabric cut pieces with attractive patterns and colours.",
-        image: "images/cutpiece-05.jpg"
+        image: "cutpiece-05.jpg"
     },
 
     {
@@ -182,7 +182,7 @@ const products = [
         category: "cutpiece",
         price: "LKR 300+",
         description: "A collection of selected cut pieces for different sewing and craft projects.",
-        image: "images/cutpiece-06.jpg"
+        image: "cutpiece-06.jpg"
     }
 
 ];
