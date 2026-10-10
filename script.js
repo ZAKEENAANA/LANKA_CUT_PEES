@@ -36,7 +36,7 @@ const products = [
         category: "plain",
         price: "LKR 450+",
         description: "Soft and comfortable plain cotton fabric. Available in multiple colours.",
-        image: "images/plain-01.jpg"
+        image: "plain-01.jpg"
     },
 
     {
@@ -44,7 +44,7 @@ const products = [
         category: "plain",
         price: "LKR 500+",
         description: "Soft and comfortable plain fabric suitable for dresses and sewing projects.",
-        image: "images/plain-02.jpg"
+        image: "plain-02.jpg"
     },
 
     {
@@ -52,7 +52,7 @@ const products = [
         category: "plain",
         price: "LKR 650+",
         description: "Elegant linen fabric with a beautiful natural finish.",
-        image: "images/plain-03.jpg"
+        image: "plain-03.jpg"
     },
 
     {
@@ -60,7 +60,7 @@ const products = [
         category: "plain",
         price: "LKR 480+",
         description: "Classic plain fabric suitable for everyday clothing and creative designs.",
-        image: "images/plain-04.jpg"
+        image: "plain-04.jpg"
     },
 
     {
@@ -68,7 +68,7 @@ const products = [
         category: "plain",
         price: "LKR 520+",
         description: "Comfortable cotton fabric available in attractive colours.",
-        image: "images/plain-05.jpg"
+        image: "plain-05.jpg"
     },
 
     {
@@ -76,7 +76,7 @@ const products = [
         category: "plain",
         price: "LKR 600+",
         description: "Premium plain fabric collection for stylish clothing and sewing.",
-        image: "images/plain-06.jpg"
+        image: "plain-06.jpg"
     },
 
 
